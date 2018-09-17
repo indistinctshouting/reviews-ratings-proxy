@@ -1,0 +1,22 @@
+{
+  "name": "reviews-ratings-proxy",
+  "version": "1.0.0",
+  "description": "Proxy server for fec",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indistinctshouting/reviews-ratings-proxy.git"
+  },
+  "author": "Javi Garcia-Bengochea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indistinctshouting/reviews-ratings-proxy/issues"
+  },
+  "homepage": "https://github.com/indistinctshouting/reviews-ratings-proxy#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
