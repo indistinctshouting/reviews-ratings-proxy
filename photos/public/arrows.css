@@ -1,0 +1,42 @@
+.slideshow:hover .left-arrow {
+  left: 1%;
+}
+
+.slideshow:hover .right-arrow {
+  right: 38%;
+}
+
+.arrow {
+  /* will need to change arrow color if background color is not white */
+  position: absolute;
+  z-index: 2;
+  width: 40px;
+  opacity: 0.7;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.left-arrow {
+  left: -50px;
+  top: 105px;
+  transition: 0.2s;
+}
+
+.right-arrow {
+  right: 200px;
+  top: 105px;
+  transition: 0.2s;
+}
+
+.modal-left-arrow {
+  width: 40px;
+  left: 1%;
+  top: 45%;
+}
+
+.modal-right-arrow {
+  left: 71%;
+  top: 45%;
+}

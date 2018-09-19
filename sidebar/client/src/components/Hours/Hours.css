@@ -1,0 +1,36 @@
+.redtext {
+  color: #d32323;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.greentext {
+  color: #41a700;
+}
+.checkopen {
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 6px;
+  vertical-align: baseline;
+}
+
+.hours {
+  margin-bottom: 6px;
+  width: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 0 1em 0 0;
+  border: none;
+  vertical-align: baseline;
+  display: table-cell;
+}
+
+.day {
+  min-width: 36px;
+  padding-right: 18px;
+}
+
+.time {
+  white-space: nowrap;
+  padding-right: 6px;
+}
