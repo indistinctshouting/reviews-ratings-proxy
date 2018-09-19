@@ -1,0 +1,14 @@
+body {
+  display: grid;
+  grid-template-rows: 300px min-content;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+ /* .photos {
+   display: grid;
+   grid-template-columns: 400px;
+   margin: auto;
+ } */
