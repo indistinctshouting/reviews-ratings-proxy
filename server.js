@@ -2,52 +2,30 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const app = express();
-const mongoose = require('mongoose');
 const BodyParser = require('body-parser');
+const axios = require('axios');
 
 app.use(BodyParser.urlencoded({extended: true}));
 app.use(BodyParser.json());
 app.use(morgan('dev'));
 app.use('/:id', express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/fec');
-
-const reviewSchema = new mongoose.Schema({
-  reviewId: Number, 
-  restaurantId: Number,
-  rating: Number,
-  date: Date,
-  text: String,
-  owner: {
-    picture: String,
-    name: String,
-    location: String,
-    friends: Number,
-    reviewCount: Number,
-    photos: Number,
-    checkIns: Number,
-    elite: Boolean
-  },
-  updated: Boolean,
-  upvotes: {
-    useful: Number,
-    funny: Number,
-    cool: Number
-  }
+app.get('/reviews/id/:id', (req, res) => {
+  axios.get(`http://localhost:3002/reviews/id/${req.params.id}`)
+    .then(response => res.send(response.data))
+    .catch(err => console.error(err));
 });
 
-const Review = mongoose.model('Review', reviewSchema);
+app.get('/summary/id/:id', (req, res) => {
+  axios.get(`http://localhost:3003/summary/id/${req.params.id}`)
+    .then(response => res.send(response.data))
+    .catch(err => console.error(err));
+});
 
-const getRestaurantReviews = (id, callback) => {
-  Review.find({restaurantId: id}, (err, reviews) => {
-    callback(reviews);
-  });
-};
-
-app.get('/reviews/id/:id', (req, res) => {
-  getRestaurantReviews(req.params.id, (reviews) => {
-    res.send(reviews);
-  });
+app.get('/photos/:rest_id', function(req, res) {
+  axios.get(`http://localhost:3001/photos/${req.params.rest_id}`)
+    .then(response => res.send(response.data))
+    .catch(err => console.error(err));
 });
 
 app.listen(3000, () => {
