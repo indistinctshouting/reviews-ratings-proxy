@@ -1,14 +1,40 @@
-body {
+.header {
+  height: 65px;
+  width: 100%;
+  background-color: #D1262B;
+}
+
+.header-contents {
+  width: 78%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 110px;
+  margin-top: -5px;
+}
+.services {
   display: grid;
-  grid-template-rows: 300px min-content;
+  grid-template-rows: min-content min-content;
+  grid-row-gap: 100px;
+}
+
+.photos-container {
+  height: 400px;
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-top: 45px;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+#photos {
+  position: relative;
+  top: 45%;
+  margin-left: 34%;
 }
 
 .body {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  width: 1120px;
 }
- /* .photos {
-   display: grid;
-   grid-template-columns: 400px;
-   margin: auto;
- } */
